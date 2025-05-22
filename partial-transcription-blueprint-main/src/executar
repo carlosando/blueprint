@@ -1,0 +1,15 @@
+#NODE_OPTIONS=--openssl-legacy-provider npm start
+
+# ajustes feito para poder executar em outras regiões.. 
+
+# Em utils/genesysCloudUtils.ts:
+# const client = platformClient.ApiClient.instance;
+#
+# // ⬇️ Adicionado: configuração do ambiente dinâmico
+# const host = process.env.REACT_APP_GENESYS_HOST || 'sae1.pure.cloud';
+# client.setEnvironment(host);
+#
+# const { clientId, redirectUri } = clientConfig;
+#
+set REACT_APP_GENESYS_HOST=sae1.pure.cloud
+npm run start
